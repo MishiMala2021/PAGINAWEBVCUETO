@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- audio -->
+  <div id="audio-wrapper">
+    <select   id="music-selector">
+    <option   value="">Selecciona una canción</option>
+    <option   value="arcade.mp3">Arcade</option>
+    <option   value="505.mp3">505 - Artic</option>
+    <option   value="ohbaby.mp3">My kind of woman</option>
+    <option   value="just.mp3">Sorpresa v:</option>
+ 
+  </select>
+  
+  
+  <audio id="music-player" controls>
+    Tu navegador no admite la reproducción de audio.
+  </audio>
+
+  <label for="volume-control">Volumen:</label>
+  <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
+</div>
+
+  <script>
+    const musicSelector = document.getElementById('music-selector');
+    const musicPlayer = document.getElementById('music-player');
+    const volumeControl = document.getElementById('volume-control');
+  
+   
+    musicPlayer.volume = 1;
+  
+    
+    musicSelector.addEventListener('change', () => {
+      const selectedMusic = musicSelector.value;
+      if (selectedMusic) {
+        musicPlayer.src = selectedMusic;
+        musicPlayer.play(); 
+      } else {
+        musicPlayer.pause(); 
+      }
+    });
+  
+    
+    volumeControl.addEventListener('input', () => {
+      const volumeValue = volumeControl.value;
+      musicPlayer.volume = volumeValue;
+    });
+  </script>
+
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <div class="user-box">
+            <input type="text"  required>
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+
+          
+          
+          <center>
+          <a href="index.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit" class="btn">Login</button>
+          </a>
+        </center>
+        </form>
+      </div>
+</body>
+</html>

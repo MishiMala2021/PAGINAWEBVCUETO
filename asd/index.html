@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="shortcut icon" href="img/loguito.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <!-- MENU -->
+        <nav class="menu">
+            <section class="contenedor_menu">
+                <img src="img/pngwing.com (1).png" class="logo_menu">
+                <div class="miau">
+                    <h1>MATCH LOVER</h1>
+                </div>
+                    
+                <div class="cont_enlaces">
+                    <ul class="menu_links">
+                        <li class="menu_item">
+                            
+                        </li>
+                        <li class="menu_item">
+                           
+                        </li>
+                        <li class="menu_item">
+                          
+                        </li>
+                        <li class="menu_item">
+                           
+                        </li>
+           
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu_icon">
+                    <img src="img/menu.svg" class="menu_img">
+                </div>
+            </section>
+        </nav>
+        <script>
+                const lista = document.querySelector('.menu_links'); 
+    const iconomenu = document.querySelector('.menu_icon'); 
+
+    iconomenu.addEventListener('click', function() {
+        lista.classList.toggle('menu_links--show');
+});
+        </script>
+    </header>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- INICIO -->
+    <main>
+        <section class="slider" id="inicio">
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>PERSONAS ESPERANDOTE</h1>
+                    <p>Aqui encontraras a tu media naranja</p>
+                    
+                </div>
+                <img src="img/a.jpg" style="width: 100%; height: 100%;">
+            </div>
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>DESCUENTOS EN LA WEB</h1>
+                    <p>Eres beneficioso por ser nuevo usuario</p>
+                   
+                </div>
+                <img src="img/e.jpg" style="width: 100%; height: 100%;">
+            </div>
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>CONOCE A GENTE DE PAISES</h1>
+                    <p>Aqui te pondremos sugerencias de<br>personas que puedan interesarte</p>
+                    
+                </div>
+                <img src="img/i.png" style="width: 100%; height: 100%;">
+            </div>
+            <div class="myslide fade">
+                <div class="txt">
+                    <h1>BUENAS RESEÑAS</h1>
+                    <p>Gente da testimonios en los cuales dicen<br>que encontraron al amor de su visa</p>
+                    <a href="#servicios" class="btn-shop">SERVICIOS</a>
+                </div>
+                <img src="img/o.jpg" style="width: 100%; height: 100%;">
+            </div>
+            <a class="slider__btn slider__btn--left" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="slider__btn slider__btn--right" onclick="plusSlides(1)">&#10095;</a>
+            
+        </section>
+        <script>
+            const myslide = document.querySelectorAll('.myslide'),
+        dot = document.querySelectorAll('.dot');
+    let counter = 1;
+    slidefun(counter);
+
+    let timer = setInterval(autoSlide, 9000);
+    function autoSlide() {
+        counter += 1;
+        slidefun(counter);
+    }
+    function plusSlides(n) {
+        counter += n;
+        slidefun(counter);
+        resetTimer();
+    }
+    function currentSlide(n) {
+        counter = n;
+        slidefun(counter);
+        resetTimer();
+    }
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(autoSlide, 8000);
+    }
+
+    function slidefun(n) {
+        
+        let i;
+        for(i = 0;i<myslide.length;i++){
+            myslide[i].style.display = "none";
+        }
+        for(i = 0;i<dot.length;i++) {
+            dot[i].className = dot[i].className.replace(' active', '');
+        }
+        if(n > myslide.length){
+        counter = 1;
+        }
+        if(n < 1){
+        counter = myslide.length;
+        }
+        myslide[counter - 1].style.display = "block";
+        dot[counter - 1].className += " active";
+    }
+        </script>
+    
+      </section>
+
+      <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+      <!-- RESEÑA  -->
+
+      <section class="subtemas" id="reseña">
+
+
+        <div class="aea">
+          <h2 class="titulo">RESEÑA DE CLIENTES </h2>
+        </div>
+
+        <div class="subt">
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-container">
+                        <img src="img/chica.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Hola a todos los navegantes de este sitio web, soy Ana y mi testimonio esque aqui conoci al amor de mi vida con el cual tengo una hermosa hija, agradezco a est sitio web.</p>
+                      <div class="iconos">
+                        <img src="icon-pu.png" alt="">
+                      </div>
+                     
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-containe">
+                        <img src="img/chico.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Holaaa!, soy Alex y entro mucho a este sitio web, ya que conoci muchaas personas grandiisas, pero aun sigo en busca de mi media naranja. Quisiera poder encontrarte :3</p>
+                      <div class="iconos">
+                        <img src="icon-caja.png" alt="">
+                      </div>
+                      
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-contain">
+                        <img src="img/chica1.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Me llamo Luis, tengo 23 años y uso este sitio web para conocer gente y salir, ya llevo 3 años usando este sitio web y me encanta, lo recomiendo mucho!</p>
+                      <div class="iconos">
+                        <img src="icon-id.png" alt="">
+                      </div>
+                      
+                  </div>
+              </div>
+        </div>
+      </section>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- PERFILES -->
+        
+      <section class="subtemas" id="perfiles">
+
+
+        <div class="aea">
+          <h2 class="titulo">ALGUNOS PERFILES</h2>
+        </div>
+
+        <div class="subt">
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-container">
+                        <img src="img/1.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Cami, 20 años, en busca de mi pareja ideal.Ingeniera de Sistemas, Peru Me gusta jugar LOL, Dota2, Valorant y ver barbie :vBusco a un chico o chica gamer que quiera compartir momentos conmigo.</p>
+                    
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-containe">
+                        <img src="img/2.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>La naturaleza es mi refugio y donde encuentro paz. Me encanta hacer senderismo, acampar y disfrutar de las maravillas al aire libre. También tengo una gran pasión por los animales, y su bienestar es fundamental para mí. Soy una persona compasiva y me involucro en proyectos de voluntariado para ayudar a los animales en necesidad.</p>
+                     
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-contain">
+                        <img src="img/3.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Sofia, Me considero una artista en el alma. Puedo pasar horas dibujando, pintando o creando algo con mis manos. Mi imaginación es desbordante y siempre tengo ideas originales para mis proyectos. Aunque soy una persona introvertida, disfruto de compartir mis creaciones con los demás y aprecio profundamente la belleza en todas sus formas.</p>
+                    
+                      
+                  </div>
+              </div>
+        </div>
+      </section>
+        
+      <section class="subtemas" id="perfiles">
+
+
+        <div class="subt">
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-container">
+                        <img src="img/4.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Diego, Siempre he sido un espíritu aventurero y libre. Me encanta explorar nuevos lugares y vivir experiencias emocionantes. Disfruto viajando, probando comidas exóticas y conociendo diferentes culturas. También soy un apasionado de los deportes extremos y me encanta la adrenalina que siento al practicarlos. Cuando no estoy en búsqueda de emociones, me relajo tocando la guitarra y componiendo música.</p>
+                    
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-containe">
+                        <img src="img/5.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Soy Marcela, Me considero una activista comprometida con la protección de los animales y el medio ambiente. Participar en organizaciones de rescate y crear conciencia sobre temas de conservación es parte de mi misión en la vida. Soy una persona compasiva y empática, siempre dispuesta a ayudar a los más vulnerables.</p>
+                      
+                      
+                  </div>
+              </div>
+            <div class="sub">
+                  <div class="contenido-sub">
+                    <div class="circle-contain">
+                        <img src="img/6.jpg" alt="Descripción de la imagen">
+                    </div>
+                      <p>Desde muy joven, me ha apasionado el arte en todas sus formas. Pinto, dibujo y escribo, y siempre estoy buscando nuevas formas de expresión creativa. Adoro pasar horas en una galería de arte o en una librería. También me fascina el cine independiente y las películas con un mensaje profundo. Soy un conversador apasionado y disfruto de debates sobre filosofía y política.</p>
+                     
+                    
+                  </div>
+              </div>
+        </div>
+      </section>
+
+        <!-- SECION CONTACTO -->
+      <section id="contacto">
+        <div class="conten">
+
+            <h1 class="titulo">CONTACTANOS</h1>
+    
+            <div class="contact-wrapper animated bounceInUp">
+                <div class="contact-form">
+
+                    <form action="">
+                        <p>
+                            <label>Nombre Completo</label>
+                            <input type="text" name="fullname">
+                        </p>
+                        <p>
+                            <label>Correo Electronico</label>
+                            <input type="email" name="email">
+                        </p>
+                        <p>
+                            <label>Celular</label>
+                            <input type="tel" name="phone">
+                        </p>
+                        <p>
+                            <label>Que buscas</label>
+                            <input type="text" name="affair">
+                        </p>
+                        <p class="block">
+                           <label>Mensaje</label> 
+                            <textarea name="message" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <button>
+                                Enviar
+                            </button>
+                        </p>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h4>Más información</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> CarabaylloCity</li>
+                        <li><i class="fas fa-phone"></i>926489825</li>
+                        <a class="aeaa" href="mailto:karennayelirodriguezsandoval@gmail.com">
+                        <li><i class="aeaa"></i> karenrodriguezsandoval@gmail.com</li></a>
+                    </ul>
+                    <p>Esta es una empresa de buscar citas por internet</p>
+                    <p>Match Lover.com</p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    <!-- aniamcion par el form -->
+        <script>
+            const $form = document.querySelector('#form')
+            const $buttonMailto = document.querySelector('#enviar')
+
+            $form.addEventListener('submit', handleSubmit)
+
+            function handleSubmit(event) {
+                event.preventDefault()
+                const form = new FormData(this)
+                console.log(form.get('nombre'))
+                $buttonMailto.setAttribute('href', `mailto:karennayelirodriguezsandoval@gmail.com: ${form.get('asunto')}&body=Nombres y Apellidos: ${form.get('nombre')} %0ACorreo: ${form.get('mail')} %0AMensaje: ${form.get('mensaje')}`)
+                $buttonMailto.click()
+            }
+        </script>
+    </main>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- FOOTER -->
+
+    <footer class="main-footer">
+        <div class="footer__section">
+            
+            <p class="footer__txt">PROXIMAMENTE ESTAREMOS LANZANDO OTRAS PAGINAS COMO ALQUILER DE NOVIA XD</p>
+        </div>
+        <div class="footer__section">
+            
+            <p class="footer__txt">Carabayllo- Comas</p>
+        
+            <p class="footer__txt">9489825</p>
+
+            <a class="footer__txt" href="karennayelirodriguezsandoval@gmail.com">karennayelirodriguezsandoval@gmail.com</a>
+        </div>
+       
+        </div>
+        <p class="copy">Pagina para el instituto Carlos Cueto Fernandini</p>
+        <a href="mailto:karenrodriguezsandoval@gmail.com" class="float pulse" target="_blank">
+
+            
+            <i class="fa fa-whatsapp my-float "></i>
+        </a>
+    </a>
+</body>
+
+</html>
